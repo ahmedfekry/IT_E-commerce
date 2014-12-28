@@ -1,11 +1,9 @@
  <?php
 	session_start();
-	/*if(!isset($_SESSION['admin']) ) {
+	if(!isset($_SESSION['admin']) ) {
 		 header ("Location: index.php"); 
 		 exit();
 	}
-	*/
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,15 +27,15 @@
 		    <nav class="nav1">
  				<ul>
 					<li><a href="HomeAdmin.php">Home</a></li>
-   				    <li><a href="createProduct.php">Add new Product</a></li>
-    				<li><a href="#">Setting</a></li>
+   				    <li><a href="chooseCategory.php">Add new Product</a></li>
+    				<li><a href="">Setting</a></li>
   				</ul>
 			</nav>
 			<!-- Projects Row -->
 	        <div class="rows">
 				
 				<h2>
-	                    <a href="#">  All Products </a>
+	                    <a href="">  All Products </a>
 	                </h2>
 				<?php
 

@@ -1,10 +1,10 @@
  <?php
 	session_start();
-	/*if(!isset($_SESSION['admin']) ) {
+	if(!isset($_SESSION['admin']) ) {
 		 header ("Location: index.php"); 
 		 exit();
 	}
-	*/
+	
 	if(isset($_POST['sub']))
 	{
 		$servername = "localhost";
@@ -49,7 +49,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Customer Accounts</title>
+	<title>Shiping Orders</title>
 	<link href="ShippingPage.css" rel="stylesheet">
 	<!-- link href="css/2-col-portfolio.css" rel="stylesheet" -->
 </head>
@@ -60,7 +60,7 @@
     		<!-- Here's all it takes to make this navigation bar. -->
    			<ul id="nav">
 
-     			 <li id="login"><a href="logOutAdmin.php">Logout</a></li>
+     			 <li id="login"><a href="logout.php">Logout</a></li>
   			 </ul>
             <!-- done. -->
     	</div>

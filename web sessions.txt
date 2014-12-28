@@ -1,0 +1,3 @@
+sessions
+admin   id
+customerId   id

@@ -1,3 +1,12 @@
+<?php
+
+	session_start();
+	if(!isset($_SESSION['customerId']) ) {
+		 header ("Location: index.php"); 
+		 exit();
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <link href="HomeCustomer.css" rel="stylesheet" type="text/css">
@@ -6,7 +15,7 @@
     <div class="footer">
     <ul id="nav">
 
-           <li id="login"><a href="logOutUser.php">Logout</a></li>
+           <li id="login"><a href="logout.php">Logout</a></li>
          </ul>
   </div>
   <!--the main-->

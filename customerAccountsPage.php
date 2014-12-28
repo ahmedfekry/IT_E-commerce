@@ -1,11 +1,9 @@
  <?php
 	session_start();
-	/*if(!isset($_SESSION['admin']) ) {
+	if(!isset($_SESSION['admin']) ) {
 		 header ("Location: index.php"); 
 		 exit();
 	}
-	*/
-	
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +19,7 @@
     		<!-- Here's all it takes to make this navigation bar. -->
    			<ul id="nav">
 
-     			 <li id="login"><a href="logOutAdmin.php">Logout</a></li>
+     			 <li id="login"><a href="logout.php">Logout</a></li>
   			 </ul>
             <!-- done. -->
     	</div>

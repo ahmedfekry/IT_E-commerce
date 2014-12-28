@@ -1,8 +1,15 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['admin']) ) {
+		 header ("Location: index.php"); 
+		 exit();
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Product Category</title>
-	<link href="chooseCategory_2.css" rel="stylesheet">
+	<link href="chooseCategory.css" rel="stylesheet">
 	<!-- link href="css/2-col-portfolio.css" rel="stylesheet" -->
 </head>
 	<body>
@@ -11,12 +18,12 @@
     <div class="wrap">
 	    <div class="header">
 	    	<ul class="wrap-top" id="nav">
-	     		<li id="home"><a href="Home.php">Home</a></li>
+	     		<li id="home"><a href="HomeAdmin.php">Home</a></li>
 
 	  		</ul>
 	  	</div>
 	  	<div class="signupform">
-		    <form class="sign-up" action="chooseCategory_2.php" method="POST">
+		    <form class="sign-up" action="chooseCategory.php" method="POST">
 			    <h1 class="sign-up-title">Choose Category and Subcategory</h1><br>
 			    <h3>Choose category</h3>
 			    <input type="submit" name= 'lap' value="Laptop" class="sign-up-button"><br>

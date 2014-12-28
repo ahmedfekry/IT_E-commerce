@@ -1,3 +1,10 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['admin']) ) {
+		 header ("Location: index.php"); 
+		 exit();
+	}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +14,7 @@
 </head>
 	<body>
 	<?php 
-	session_start();
+
 	if(!isset($_GET['id']) && !isset($_SESSION['cat']) )
 	{
 		echo "You are not logged in";
@@ -106,7 +113,7 @@
     <div class="wrap">
 	    <div class="header">
 	    	<ul class="wrap-top" id="nav">
-	     		<li id="home"><a href="Home.php">Home</a></li>
+	     		<li id="home"><a href="HomeAdmin.php">Home</a></li>
 
 	  		</ul>
 	  	</div>
@@ -114,11 +121,11 @@
 		    <form class="sign-up" action="createProduct.php" method="POST">
 			    
 				<h1 class="sign-up-title">Add new Product</h1>
-			    <input type="text" name="item_name" class="sign-up-input" placeholder="Item name" autofocus required>
-			    <textarea class="sign-up-input" name="item_description" id="textarea" cols="25" rows="5" placeholder="Description" maxlength="80" required></textarea >
+			    <input type="text" name="item_name" class="sign-up-input" placeholder="Item name" pattern="[a-zA-Z 0-9]{3,255}"autofocus required>
+			    <textarea class="sign-up-input" name="item_description" id="textarea" cols="25" rows="5" placeholder="Description" maxlength="80" pattern="[a-zA-Z 0-9]{3,255}" required></textarea >
 			   
-			    <input type="text" class="sign-up-input" name="quantity_in_stock" placeholder="Quantity in stock "required>
-			    <input type="text" class="sign-up-input" name="price" placeholder="Price " required>
+			    <input type="text" class="sign-up-input" name="quantity_in_stock" placeholder="Quantity in stock "pattern="[0-9]{1,11}"required>
+			    <input type="text" class="sign-up-input" name="price" placeholder="Price " pattern="[0-9]{1,11}"required>
 				
 				Visible: <input type='radio'  name='visibility' value = '1' placeholder='Visible ' checked='checked' ><br>   
 				Not Visible: <input type='radio'  name='visibility' value = '0' placeholder='Not Visible '><br><br>

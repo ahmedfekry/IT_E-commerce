@@ -1,10 +1,10 @@
  <?php
 	session_start();
-	/*if(!isset($_SESSION['customerid']) ) {
+	if(!isset($_SESSION['customerId']) ) {
 		 header ("Location: index.php"); 
 		 exit();
 	}
-	*/
+	
 	 
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
     		<!-- Here's all it takes to make this navigation bar. -->
    			<ul id="nav">
 
-     			 <li id="login"><a href="logOutUser.php">Logout</a></li>
+     			 <li id="login"><a href="logout.php">Logout</a></li>
   			 </ul>
             <!-- done. -->
     	</div>
@@ -39,7 +39,7 @@
 				<h2>  <a href="">  Track Order </a> </h2>
 				
 				<form action="tracking_order.php" method="post">
-				<label>Transaction ID:</label><input type="text" name="id" required ><br>
+				<label>Transaction ID: </label><input type="text" name="id" required pattern = "[0-9]{1,}"><br><br>
 				<input type="submit" value="track" name = 'sub' style="width: 120px; height: 30px;">
 				</form>
 				
@@ -61,9 +61,9 @@
 							echo " Enter a valid Transaction number ";
 							exit();
 						}
-						
+						$cid = $_SESSION['customerId'] ;
 						$query="SELECT *FROM order_processing
-						WHERE id=$ID  and processed=1";
+						WHERE id=$ID  and processed=1 and customer = $cid" ;
 						$result=mysqli_query($conn,$query);
 						if(mysqli_num_rows($result) == 0)
 						{

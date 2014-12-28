@@ -1,12 +1,9 @@
 <?php
-
-session_start();
-	/*if(!isset($_SESSION['admin']) ) {
+	session_start();
+	if(!isset($_SESSION['admin']) ) {
 		 header ("Location: index.php"); 
 		 exit();
 	}
-	*/
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,7 +13,7 @@ session_start();
     <div class="footer">
     <ul id="nav">
 
-           <li id="login"><a href="logOutAdmin.php">Logout</a></li>
+           <li id="login"><a href="logout.php">Logout</a></li>
          </ul>
   </div>
   <!--the main-->
@@ -25,7 +22,7 @@ session_start();
         <ul>
             <li><a href="StorePage.php">Store Page</a></li>
               <li><a href="customerAccountsPage.php">Customer Accounts Page</a></li>
-            <li><a href="">Shipping Page</a></li>
+            <li><a href="ShippingPage.php">Shipping Page</a></li>
 
           </ul>
 

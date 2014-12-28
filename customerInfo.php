@@ -11,10 +11,19 @@
     <div class="wrap">
 	    <div class="header">
 	    	<ul class="wrap-top" id="nav">
-	     		<li id="home"><a href="Home.php">Home</a></li>
+	     		
+			<div class="wrap">
+			<div id="header">
+    		<!-- Here's all it takes to make this navigation bar. -->
+   			<ul id="nav">
 
+     			 <li id="login"><a href="logout.php">Logout</a></li>
+  			 </ul>
+            <!-- done. -->
+    	</div>
 	  		</ul>
 	  	</div>
+		
 	  	<div class="signupform">
 		    <form class="sign-up" action="customerInfo.php" method="POST">
 			<h1 class="sign-up-title">Personal Information</h1>
@@ -28,13 +37,13 @@
 					
 					if(!isset($_SESSION['custid']) && !isset( $_GET['id']) )
 					{
-						if(!isset($_SESSION['customerid']) && !isset($_SESSION['admin']))
+						if(!isset($_SESSION['customerId']) && !isset($_SESSION['admin']))
 						{
 							echo "index";
 							header ("Location: index.php");
 						
 						}
-						else if(isset($_SESSION['customerid']))
+						else if(isset($_SESSION['customerId']))
 						{
 							echo "HomeCustomer";
 							header ("Location: HomeCustomer.php");
@@ -140,13 +149,14 @@
 					{
 						$access = true;					
 					}
-					else if( isset($_SESSION['customerid']) )
+					else if( isset($_SESSION['customerId']) )
 					{
-						if($_SESSION['customerid'] == $custid)
+						if($_SESSION['customerId'] == $custid)
 						{
 							$access = true;		
 						}
 					}
+					
 					
 					$first_name = $row['first_name'];
 					$last_name= $row['last_name'];
@@ -162,20 +172,20 @@
 					$email = $row['email'];
 					$password = $row['password'];
 					?>
-					<b>First Name:</b><input type="text" value = "<?php echo $first_name;?>" class="sign-up-input" placeholder="Your First Name" autofocus name = "first_name" required >
-					<b>Last Name:</b><input type="text" value = "<?php echo $last_name;?>"  class="sign-up-input" placeholder="Your Last Name" autofocus name = "last_name" required>
+					<b>First Name:</b><input type="text" value = "<?php echo $first_name;?>" class="sign-up-input" placeholder="Your First Name" autofocus name = "first_name" pattern="[a-zA-Z]{3,255}" required >
+					<b>Last Name:</b><input type="text" value = "<?php echo $last_name;?>"  class="sign-up-input" placeholder="Your Last Name" autofocus name = "last_name" pattern="[a-zA-Z]{3,255}" required>
 				
-					<b>billing_address:</b><input type="text"  value = "<?php echo $billing_address;?>" class="sign-up-input" placeholder="Billing Address" autofocus name = "billing_address" required>
-					<b>billing_city:</b><input type="text"  value = "<?php echo $billing_city;?>" class="sign-up-input" placeholder="Billing City" autofocus name = "billing_city" required>
-					<b>billing_state:</b><input type="text"  value = "<?php echo $billing_state;?>"  class="sign-up-input" placeholder="BillingState " autofocus name = "billing_state" required>
-					<b>billing_zip:</b><input type="text"  value = "<?php echo $billing_zip;?>" class="sign-up-input" placeholder="Billing Zip" autofocus name = "billing_zip" required>
+					<b>billing_address:</b><input type="text"  value = "<?php echo $billing_address;?>" class="sign-up-input" placeholder="Billing Address" autofocus name = "billing_address" pattern="[a-zA-Z 0-9]{3,255}" required>
+					<b>billing_city:</b><input type="text"  value = "<?php echo $billing_city;?>" class="sign-up-input" placeholder="Billing City" autofocus name = "billing_city" pattern="[a-zA-Z]{3,255}" required>
+					<b>billing_state:</b><input type="text"  value = "<?php echo $billing_state;?>"  class="sign-up-input" placeholder="BillingState " autofocus name = "billing_state" pattern="[a-zA-Z]{3,255}" required>
+					<b>billing_zip:</b><input type="text"  value = "<?php echo $billing_zip;?>" class="sign-up-input" placeholder="Billing Zip" autofocus name = "billing_zip" pattern="[0-9]{3,255}" required>
 					
-					<b>shipping_address:</b><input type="text"  value = "<?php echo $shipping_address;?>" class="sign-up-input" placeholder="Shipping  Address" autofocus name = "shipping_address" required>
-					<b>shipping_city:</b><input type="text"  value = "<?php echo $shipping_city;?>" class="sign-up-input" placeholder="Shipping  City" autofocus name = "shipping_city" required>
-					<b>shipping_state:</b><input type="text"  value = "<?php echo $shipping_state;?>" class="sign-up-input" placeholder="Shipping State  " autofocus name = "shipping_state" required>
-					<b>shipping_zip:</b><input type="text"  value = "<?php echo $shipping_zip;?>" class="sign-up-input" placeholder="Shipping  Zip" autofocus name = "shipping_zip" required>
+					<b>shipping_address:</b><input type="text"  value = "<?php echo $shipping_address;?>" class="sign-up-input" placeholder="Shipping  Address" autofocus name = "shipping_address" pattern="[a-zA-Z 0-9]{3,255}"required>
+					<b>shipping_city:</b><input type="text"  value = "<?php echo $shipping_city;?>" class="sign-up-input" placeholder="Shipping  City" autofocus name = "shipping_city" pattern="[a-zA-Z]{3,255}" required>
+					<b>shipping_state:</b><input type="text"  value = "<?php echo $shipping_state;?>" class="sign-up-input" placeholder="Shipping State  " autofocus name = "shipping_state" pattern="[a-zA-Z]{3,255}" required>
+					<b>shipping_zip:</b><input type="text"  value = "<?php echo $shipping_zip;?>" class="sign-up-input" placeholder="Shipping  Zip" autofocus name = "shipping_zip" pattern="[0-9]{3,255}" required>
 					
-					<b>phone:</b><input type="text"  value = "<?php echo $phone;?>" class="sign-up-input" placeholder="Phone" autofocus name = "phone" required>
+					<b>phone:</b><input type="text"  value = "<?php echo $phone;?>" class="sign-up-input" placeholder="Phone" autofocus name = "phone" pattern="[0-9]{3,255}" required>
 					<input type="email"  value = "<?php echo $email;?>" class="sign-up-input" placeholder="Your email" autofocus name="email" required readonly = "readonly">
 					<b>password:</b><input type="password"  value = "<?php echo $password;?>" class="sign-up-input" placeholder="Your password" name = "password" required>					
 					
