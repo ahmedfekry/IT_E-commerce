@@ -1,0 +1,72 @@
+body{
+   /* color: #fff00ff;*/
+    /* This is a single-line comment */
+	font-size: 24px;
+	background-color: white;
+  background: url('dots.jpg')center center fixed,url('5.png')center center fixed; 
+
+	/*background: url("13WD.jpg");*/
+}
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+user agent stylesheetarticle, aside, footer, header, hgroup, main, nav, section {
+display: block;
+}
+
+
+body p{
+color: floralwhite;
+    /* This is a single-line comment */
+	 
+}
+.rows ul {
+  list-style:none;
+  margin:0;
+  padding:0;
+  width:100%;
+  margin:10% auto; 
+  position:relative;
+}
+
+.rows li{
+  text-decoration: none;
+  display:inline-block;
+  width:40%;
+  height:10%;
+  text-align: center;
+  overflow:visible;
+  padding-left: 12%;
+}
+.pic2
+{
+  width:0;
+  transition:all 0.7s ease;
+  position:absolute;
+  border-radius:10%;
+  z-index:99999
+}
+.pic1:hover + .pic2
+{
+  width:250px;
+  height: 250px;
+}
+#refr{
+text-decoration: none; 
+}
+.footer{
+  width: 100%;
+  height: 60px;
+  padding: 0.3px;
+  margin-bottom: 2px;
+  background-color: #2f4f4f;
+  text-align: left;
+}
+#first{
+  padding-left: 22%;
+}
+.footer p{
+  color: floralwhite;
+}
