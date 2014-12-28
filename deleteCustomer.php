@@ -1,10 +1,10 @@
-<?php
+ <?php
 	session_start();
-	if(!isset($_SESSION['admin']) ||  !isset($_GET['id'])) {
+	if(!isset($_SESSION['admin']) ) {
 		 header ("Location: index.php"); 
 		 exit();
 	}
-	$productID = $_GET['id']	;
+	$customerID = $_GET['id']	;
 	
 
 	$servername = "localhost";
@@ -18,12 +18,9 @@
 	}
 	
 	
-	$sql = "delete  FROM product WHERE product.id = $productID ";
+	$sql = "delete  FROM customer WHERE id = '$customerID' ";
 	$query =  mysqli_query($conn, $sql);
-		$affected = $conn -> affected_rows;
-		if ($affected == 0)
-		echo "failed to delete";
-	else
-		header ("Location: StorePage.php");
+
+	header ("Location: StorePage.php");
 
 ?>

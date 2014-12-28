@@ -1,0 +1,5 @@
+Customer 
+view products  only  visible = 1
+destroy order after 30 min
+cart flags 0 0   edit order 
+checkout flags 0 0 purchase

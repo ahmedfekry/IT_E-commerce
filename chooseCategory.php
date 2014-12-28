@@ -18,7 +18,7 @@
     <div class="wrap">
 	    <div class="header">
 	    	<ul class="wrap-top" id="nav">
-	     		<li id="home"><a href="HomeAdmin.php">Home</a></li>
+	     		<li id="home"><a href="StorePage.php">Store</a></li>
 
 	  		</ul>
 	  	</div>

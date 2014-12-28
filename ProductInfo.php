@@ -117,9 +117,9 @@
 					
 					
 					echo "<img src=\"$img\" height=\"400px\" width=\"600px\" name = \"imge\">					
-					<h3>Item name: <input type=\"text\" value=\"$item_name\" name=\"item_name\" class=\"sign-up-input\" required></h3>
-					<h3>item_description: <textarea value = \"$item_description\" class=\"sign-up-input\" name=\"item_description\" id=\"textarea\" cols=\"50\" rows=\"30\" maxlength=\"80\" required>".$item_description."</textarea></h3>
-					<h3>quantity_in_stock: <input type=\"text\" value=\"$quantity_in_stock\" name=\"quantity_in_stock\" class=\"sign-up-input\" required ></h3>
+					<h3>Item name: <input type=\"text\" value=\"$item_name\" name=\"item_name\" class=\"sign-up-input\" required pattern=\"[a-zA-Z 0-9]{3,255}\"></h3>
+					<h3>item_description: <textarea value = \"$item_description\" class=\"sign-up-input\" name=\"item_description\" id=\"textarea\" cols=\"50\" rows=\"30\" maxlength=\"80\" pattern=\"[a-zA-Z 0-9]{3,255}\"required>".$item_description."</textarea></h3>
+					<h3>quantity_in_stock: <input type=\"text\" value=\"$quantity_in_stock\" name=\"quantity_in_stock\" class=\"sign-up-input\" required pattern=\"[0-9]{1,11}\"></h3>
 					";
 					if($visibility == 1)
 					{
@@ -137,7 +137,7 @@
 					}
 					
 					echo "
-					<h3>price: <input type=\"text\" value = \"$price\" class=\"signk-up-input\" name=\"price\" required></h3>
+					<h3>price: <input type=\"text\" value = \"$price\" class=\"signk-up-input\" name=\"price\" required pattern=\"[0-9]{1,11}\"></h3>
 					<h3>category: <input type=\"text\" value=\"$category\" name=\"category\" class=\"sign-up-input\" required readonly='readonly'></h3>
 					<h3>subcategory: <input type=\"text\" value = \"$subcategory \" name=\"subcategory\" class=\"sign-up-input\" required readonly='readonly'></h3>					
 					";
