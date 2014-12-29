@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Customer Accounts</title>
+
+	<!-- link href="css/2-col-portfolio.css" rel="stylesheet" -->
+</head>
+	<body>
+	<script>
+	
+	function combo(thelist, theinput) {
+    theinput = document.getElementById(theinput);
+    var idx = thelist.selectedIndex;
+    var content = thelist.options[idx].innerHTML;
+    theinput.value = content;
+	var x = document.getElementById("list");
+	var c = document.createElement("option");
+	c.text = "Kiwi";
+	x.options.add(c, 1);
+	
+	
+}
+	
+	</script>
+
+<p id="demo"></p>
+<input type="text" id="theinput" name="theinput" />
+<select name="list" id = "list" onChange="combo(this, 'theinput')">
+  <option>one</option>
+  <option>two</option>
+  <option>three</option>
+</select>
+
+
+		
+  	</body>
+</html>
