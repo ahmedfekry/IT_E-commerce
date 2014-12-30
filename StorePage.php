@@ -18,7 +18,6 @@
     	<div id="header">
     		<!-- Here's all it takes to make this navigation bar. -->
    			<ul id="nav">
-
      			 <li id="login"><a href="logOut.php">Logout</a></li>
   			 </ul>
             <!-- done. -->

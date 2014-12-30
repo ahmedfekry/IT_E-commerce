@@ -76,7 +76,7 @@
 				$row = mysqli_fetch_assoc($query);
 				$userID = $row["id"];
 				$_SESSION["customerId"] = $userID;
-				header ("Location: HomeCustomer.php");
+				header ("Location: homepage.php");
 				exit();
 			}
 			else 

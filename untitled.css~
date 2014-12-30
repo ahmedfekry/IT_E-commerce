@@ -17,14 +17,14 @@
     text-align:center;
     }
 
-#nav2 li {
+#nav li {
     display:inline-block;
     position:relative;
     float:left;
     background: #006633;
     }
 
-#nav2 li a {
+#nav li a {
     display:inline-block;
     width:200px;
     line-height:35px;
@@ -33,14 +33,14 @@
     color:#ffffff;
     }
     
-#nav2 li li {float:left; #006633;}
+#nav li li {float:left; #006633;}
     
-#nav2 li li a {display:block;font-size:12px;}
+#nav li li a {display:block;font-size:12px;}
     
-#nav2 li:hover {background:#003f20;}
+#nav li:hover {background:#003f20;}
 
 /*--- Sublist Styles ---*/
-#nav2 ul {
+#nav ul {
     position:absolute;
     padding:0px;
     left:0;
@@ -48,8 +48,8 @@
     }
 
 /*--- Hide Sub Sublists ---*/
-#nav2 li:hover ul ul {display:none;}
+#nav li:hover ul ul {display:none;}
 
 /*--- Sublevel UL's display and position on hover ---*/
-#nav2 li:hover ul {display:block;} 
-#nav2 li li:hover ul {margin-left:200px; margin-top:-35px; display:block;}
+#nav li:hover ul {display:block;} 
+#nav li li:hover ul {margin-left:200px; margin-top:-35px; display:block;}
